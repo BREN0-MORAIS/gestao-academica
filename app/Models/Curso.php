@@ -9,7 +9,10 @@ class Curso extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
-        'disciplina_id'
+        'nome_curso',
+        'semestres',
     ];
 }
