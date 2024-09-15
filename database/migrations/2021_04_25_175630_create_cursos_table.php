@@ -15,12 +15,8 @@ class CreateCursosTable extends Migration
     {
         Schema::create('cursos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome_curso',45);
-            $table->integer('carga_horaria');
-            $table->unsignedBigInteger('disciplina_id');
-
-            $table->foreign('disciplina_id')->references('id')->on('disciplinas');
-
+            $table->string('nome_curso', 45);
+            $table->integer('semestres');
         });
     }
 

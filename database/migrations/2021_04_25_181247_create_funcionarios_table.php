@@ -16,10 +16,9 @@ class CreateFuncionariosTable extends Migration
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->id();
             $table->integer('matricula');
-            $table->unsignedBigInteger('cargo_id');
             $table->unsignedBigInteger('pessoa_id');
-            $table->integer('pessoa_tipo_perfil_id');
-            $table->integer('pessoa_users_id');
+            $table->unsignedBigInteger('cargo_id');
+            $table->boolean('is_status');
 
             $table->foreign('pessoa_id')->references('id')->on('pessoas');
             $table->foreign('cargo_id')->references('id')->on('cargos');
